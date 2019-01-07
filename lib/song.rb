@@ -27,4 +27,8 @@ class Song
     song.name = name
     song
   end
+
+  def self.find_by_name(name)
+    search = self.all.detect {|s| s.name == name}
+    search
 end
