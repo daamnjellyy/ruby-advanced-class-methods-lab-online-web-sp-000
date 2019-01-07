@@ -46,4 +46,11 @@ class Song
     sort = self.all.sort_by {|s| s.name}
     sort
   end
+
+  def self.new_from_filename(filename)
+    filename_array = filename.split(" - ")
+    artist = Artist.find_or_create_by_name(filename_array[0])
+    genre = Gere.find_or_create_by_name(filename_array[2].split(".mp3")[0])
+    song = Song.new(filename_array[1],artist,genre)
+  end
 end
