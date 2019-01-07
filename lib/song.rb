@@ -52,5 +52,6 @@ class Song
     artist = Artist.find_or_create_by_name(filename_array[0])
     genre = Gere.find_or_create_by_name(filename_array[2].split(".mp3")[0])
     song = Song.new(filename_array[1],artist,genre)
+    song
   end
 end
